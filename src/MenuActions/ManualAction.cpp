@@ -1,4 +1,6 @@
 #include "ManualAction.h"
+#include "MenuDisplayer.h"
+#include "InputHandler.h"
 #include "MSHMenuManager.h"
 
 ManualAction::ManualAction() = default;
@@ -11,5 +13,4 @@ void ManualAction::execute() {
     menuDisplayer.showText(
         "Manual Text...\n"
     );
-    inputHandler.waitForInput();
 }

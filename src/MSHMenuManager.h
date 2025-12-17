@@ -1,5 +1,6 @@
 #pragma once
 
+#include "IMSHMenuManager.h"
 #include "MenuAction.h"
 #include "ICommand.h"
 #include "IModeStrategy.h"
@@ -7,7 +8,7 @@
 
 #include <map>
 
-class MSHMenuManager {
+class MSHMenuManager : public IMSHMenuManager {
 public:
     ~MSHMenuManager();
 
@@ -15,6 +16,9 @@ public:
     
     void displayMenu();
     void handleInput();
+
+    std::map<std::string, MenuAction*> getActionMap();
+    void setActionMap(std::map<std::string, MenuAction*> actionMap);
 
     std::map<std::string, ICommand*> getCommandMap();
     void setCommandMap(std::map<std::string, ICommand*> commandMap);
@@ -30,12 +34,12 @@ public:
 
 private:
     static MSHMenuManager* instance;
-    std::map<char, MenuAction*> actionMap;
+    std::map<std::string, MenuAction*> actionMap;
     std::map<std::string, ICommand*> commandMap;
     std::map<std::string, IModeStrategy*> modeMap;
     std::map<std::string, IState*> stateMap;
 
     bool isRunning = true;
 
-    MSHMenuManager();
+    MSHMenuManager() = default;
 };

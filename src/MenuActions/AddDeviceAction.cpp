@@ -1,4 +1,6 @@
 #include "AddDeviceAction.h"
+#include "MenuDisplayer.h"
+#include "InputHandler.h"
 #include "MSHMenuManager.h"
 #include "DeviceCreationType.h"
 #include "IAddDeviceCommand.h"
@@ -77,5 +79,4 @@ void AddDeviceAction::execute() {
         }
         
     }
-    inputHandler.waitForInput();
 }

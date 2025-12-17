@@ -1,10 +1,38 @@
 #include "MSH_M8.h"
+#include "GetHomeStatusAction.h"
+#include "AddDeviceAction.h"
+#include "RemoveDeviceAction.h"
+#include "PowerOnDeviceAction.h"
+#include "PoweroffDeviceAction.h"
+#include "ChangeModeAction.h"
+#include "ChangeStateAction.h"
+#include "ManualAction.h"
+#include "AboutAction.h"
+#include "ShutdownAction.h"
+
 
 MSH_M8::MSH_M8() = default;
 MSH_M8::~MSH_M8() = default;
 
-void MSH_M8::setMenuManager(MSHMenuManager* menuManager) {
-    mshMenuManager = menuManager;
+void MSH_M8::initializeMenuManager() {
+    mshMenuManager = MSHMenuManager::getInstance();
+}
+
+void MSH_M8::initializeActions() {
+    actionMap["1"] = new GetHomeStatusAction();
+    actionMap["2"] = new AddDeviceAction();
+    actionMap["3"] = new RemoveDeviceAction();
+    actionMap["4"] = new PowerOnDeviceAction();
+    actionMap["5"] = new PoweroffDeviceAction();
+    actionMap["6"] = new ChangeModeAction();
+    actionMap["7"] = new ChangeStateAction();
+    actionMap["8"] = new ManualAction();
+    actionMap["9"] = new AboutAction();
+    actionMap["10"] = new ShutdownAction();
+}
+
+void MSH_M8::applyMSHMMenuManagerActions() {
+    mshMenuManager->setActionMap(actionMap);
 }
 
 void MSH_M8::initializeCommands(std::vector<ICommand*> commands) {
@@ -25,4 +53,26 @@ void MSH_M8::initializeCommands(std::vector<ICommand*> commands) {
 
 void MSH_M8::applyMSHMMenuManagerCommands() {
     mshMenuManager->setCommandMap(commandMap);
+}
+
+void MSH_M8::initializeModes(std::vector<IModeStrategy*> modes) {
+    modeMap["normal"] = modes[0];
+    modeMap["evening"] = modes[1];
+    modeMap["party"] = modes[2];
+    modeMap["cinema"] = modes[3];
+}
+
+void MSH_M8::applyMSHMMenuManagerModes() {
+    mshMenuManager->setModeMap(modeMap);
+}
+
+void MSH_M8::initializeStates(std::vector<IState*> states) {
+    stateMap["normal"] = states[0];
+    stateMap["highPerformance"] = states[1];
+    stateMap["lowPower"] = states[2];
+    stateMap["sleep"] = states[3];
+}
+
+void MSH_M8::applyMSHMMenuManagerStates() {
+    mshMenuManager->setStateMap(stateMap);
 }

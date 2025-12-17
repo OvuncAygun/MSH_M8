@@ -1,4 +1,6 @@
 #include "ChangeStateAction.h"
+#include "MenuDisplayer.h"
+#include "InputHandler.h"
 #include "MSHMenuManager.h"
 #include "IChangeStateCommand.h"
 #include "IPreviousStateCommand.h"
@@ -58,5 +60,4 @@ void ChangeStateAction::execute() {
     }
     
     menuDisplayer.showFormattedText("State changed to " + selectedState->getName() + ".\n");
-    inputHandler.waitForInput();
 }

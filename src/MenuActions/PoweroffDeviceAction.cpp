@@ -1,4 +1,6 @@
 #include "PowerOffDeviceAction.h"
+#include "MenuDisplayer.h"
+#include "InputHandler.h"
 #include "MSHMenuManager.h"
 #include "IPoweroffDeviceCommand.h"
 #include "IGetDeviceByTypeCommand.h"
@@ -93,5 +95,4 @@ void PoweroffDeviceAction::execute() {
     poweroffDeviceCommand->execute();
 
     menuDisplayer.showFormattedText("Device " + deviceId + " off.\n");
-    inputHandler.waitForInput();
 }

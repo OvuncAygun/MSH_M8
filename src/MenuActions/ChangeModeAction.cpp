@@ -1,4 +1,6 @@
 #include "ChangeModeAction.h"
+#include "MenuDisplayer.h"
+#include "InputHandler.h"
 #include "MSHMenuManager.h"
 #include "IChangeModeCommand.h"
 #include "IModeStrategy.h"
@@ -37,5 +39,4 @@ void ChangeModeAction::execute() {
     changeModeCommand->execute();
     
     menuDisplayer.showFormattedText("Mode changed to " + selectedMode->getModeName() + ".\n");
-    inputHandler.waitForInput();
 }

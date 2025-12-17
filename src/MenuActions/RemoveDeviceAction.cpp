@@ -1,4 +1,6 @@
 #include "RemoveDeviceAction.h"
+#include "MenuDisplayer.h"
+#include "InputHandler.h"
 #include "MSHMenuManager.h"
 #include "IRemoveDeviceCommand.h"
 #include "IGetDeviceByTypeCommand.h"
@@ -84,5 +86,4 @@ void RemoveDeviceAction::execute() {
     removeDeviceCommand->execute();
 
     menuDisplayer.showFormattedText("Device " + deviceId + " removed.\n");
-    inputHandler.waitForInput();
 }

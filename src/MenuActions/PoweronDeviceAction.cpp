@@ -1,4 +1,6 @@
 #include "PowerOnDeviceAction.h"
+#include "MenuDisplayer.h"
+#include "InputHandler.h"
 #include "MSHMenuManager.h"
 #include "IPoweronDeviceCommand.h"
 #include "IGetDeviceByTypeCommand.h"
@@ -93,5 +95,4 @@ void PowerOnDeviceAction::execute() {
     poweronDeviceCommand->execute();
 
     menuDisplayer.showFormattedText("Device " + deviceId + " on.\n");
-    inputHandler.waitForInput();
 }

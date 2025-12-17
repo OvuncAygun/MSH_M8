@@ -1,4 +1,6 @@
 #include "ShutdownAction.h"
+#include "MenuDisplayer.h"
+#include "InputHandler.h"
 #include "MSHMenuManager.h"
 
 ShutdownAction::ShutdownAction() = default;

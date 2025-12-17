@@ -1,4 +1,6 @@
 #include "GetHomeStatusAction.h"
+#include "MenuDisplayer.h"
+#include "InputHandler.h"
 #include "MSHMenuManager.h"
 #include "IGetModeCommand.h"
 #include "IGetStateCommand.h"
@@ -109,6 +111,4 @@ void GetHomeStatusAction::execute() {
         std::string text = ss.str();
         menuDisplayer.showFormattedText(text);
     }
-
-    inputHandler.waitForInput();
 }
