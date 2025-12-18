@@ -10,7 +10,7 @@
 
 class IMSHMenuManager {
 public:
-    virtual ~IMSHMenuManager() = 0;
+    virtual ~IMSHMenuManager() {};
     
     virtual void displayMenu() = 0;
     virtual void handleInput() = 0;
