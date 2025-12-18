@@ -6,9 +6,9 @@
 
 class IChangeModeCommand : public ICommand {
 public:
-    virtual ~IChangeModeCommand() = 0;
+    virtual ~IChangeModeCommand() {};
 
-    IModeStrategy* newMode;
+    IModeStrategy* mode;
 
     virtual void execute() = 0;
 };

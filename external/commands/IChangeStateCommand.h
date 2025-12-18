@@ -6,9 +6,9 @@
 
 class IChangeStateCommand : public ICommand {
 public:
-    virtual ~IChangeStateCommand() = 0;
+    virtual ~IChangeStateCommand() {};
 
-    IState* newState; // M4'teki somut bir durum olmal�
+    IState* state;
 
     virtual void execute() = 0;
 };

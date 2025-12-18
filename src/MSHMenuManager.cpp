@@ -6,8 +6,10 @@
 
 MSHMenuManager::~MSHMenuManager() = default;
 
+MSHMenuManager* MSHMenuManager::instance = NULL;
+
 MSHMenuManager* MSHMenuManager::getInstance() {
-    if (instance == nullptr) {
+    if (instance == 0) {
         instance = new MSHMenuManager();
     }
     return instance;

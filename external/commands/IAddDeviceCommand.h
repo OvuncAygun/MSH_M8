@@ -9,7 +9,7 @@
 
 class IAddDeviceCommand : public ICommand {
 public:
-    virtual ~IAddDeviceCommand() = 0;
+    virtual ~IAddDeviceCommand() {};
 
     DeviceCreationType deviceCreationType;
     std::string name;

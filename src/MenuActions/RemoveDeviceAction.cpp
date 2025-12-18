@@ -30,40 +30,40 @@ void RemoveDeviceAction::execute() {
         getDeviceByTypeCommand->execute();
         devices.insert(
             devices.end(), 
-            getDeviceByTypeCommand->listResult->begin(), 
-            getDeviceByTypeCommand->listResult->end()
+            getDeviceByTypeCommand->devices.begin(), 
+            getDeviceByTypeCommand->devices.end()
         );
     } else if(deviceTypeInput == "D") {
         getDeviceByTypeCommand->type = DeviceType::TYPE_GasDetector;
         getDeviceByTypeCommand->execute();
         devices.insert(
             devices.end(), 
-            getDeviceByTypeCommand->listResult->begin(), 
-            getDeviceByTypeCommand->listResult->end()
+            getDeviceByTypeCommand->devices.begin(), 
+            getDeviceByTypeCommand->devices.end()
         );
 
         getDeviceByTypeCommand->type = DeviceType::TYPE_SmokeDetector;
         getDeviceByTypeCommand->execute();
         devices.insert(
             devices.end(), 
-            getDeviceByTypeCommand->listResult->begin(), 
-            getDeviceByTypeCommand->listResult->end()
+            getDeviceByTypeCommand->devices.begin(), 
+            getDeviceByTypeCommand->devices.end()
         );
     } else if(deviceTypeInput == "C") {
         getDeviceByTypeCommand->type = DeviceType::TYPE_Camera;
         getDeviceByTypeCommand->execute();
         devices.insert(
             devices.end(), 
-            getDeviceByTypeCommand->listResult->begin(), 
-            getDeviceByTypeCommand->listResult->end()
+            getDeviceByTypeCommand->devices.begin(), 
+            getDeviceByTypeCommand->devices.end()
         );
     } else if(deviceTypeInput == "T") {
         getDeviceByTypeCommand->type = DeviceType::TYPE_TV;
         getDeviceByTypeCommand->execute();
         devices.insert(
             devices.end(), 
-            getDeviceByTypeCommand->listResult->begin(), 
-            getDeviceByTypeCommand->listResult->end()
+            getDeviceByTypeCommand->devices.begin(), 
+            getDeviceByTypeCommand->devices.end()
         );
     } else {
         menuDisplayer.showText("Invalid device type selected.");
@@ -82,8 +82,19 @@ void RemoveDeviceAction::execute() {
     int index;
     std::stringstream(deviceId) >> index;
 
-    removeDeviceCommand->index = index;
-    removeDeviceCommand->execute();
+    removeDeviceCommand->device = NULL;
+    for (IDevice* device : devices) {
+        if (device->getIndex() == index) {
+            removeDeviceCommand->device = device;
+            break;
+        }
+    }
+    if (removeDeviceCommand->device != NULL) {
+        removeDeviceCommand->execute();
+        menuDisplayer.showFormattedText("Device " + deviceId + " removed.\n");
+    } else {
+        menuDisplayer.showFormattedText("Invalid Device ID.\n");
+    }
 
     menuDisplayer.showFormattedText("Device " + deviceId + " removed.\n");
 }

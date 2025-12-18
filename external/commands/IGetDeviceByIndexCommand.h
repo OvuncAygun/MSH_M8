@@ -6,10 +6,10 @@
 
 class IGetDeviceByIndexCommand : public ICommand {
 public:
-    virtual ~IGetDeviceByIndexCommand() = 0;
+    virtual ~IGetDeviceByIndexCommand() {};
 
     int index;
-    IDevice** resultHolder; // Mod�l 8'deki IDevice* de�i�keninin adresi
+    IDevice* device;
 
     virtual void execute() = 0;
 };

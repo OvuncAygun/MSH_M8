@@ -6,11 +6,9 @@
 
 class IGetStateCommand : public ICommand {
 public:
-    // 1. BURAYA EKLE: Sanal Y�k�c� (Destructor)
-    // Bellek s�z�nt�lar�n� �nlemek i�in her komutun kendi sanal y�k�c�s� olmal�d�r.
-    virtual ~IGetStateCommand() = 0;
+    virtual ~IGetStateCommand() {};
 
-    IState** stateResult; // M8'deki IState* adresi
+    IState* state;
 
     virtual void execute() = 0;
 };

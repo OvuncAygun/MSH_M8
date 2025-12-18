@@ -52,7 +52,7 @@ void ChangeStateAction::execute() {
             menuDisplayer.showText("Invalid state selected.");
         }
         
-        changeStateCommand->newState = selectedState;
+        changeStateCommand->state = selectedState;
         changeStateCommand->execute();
     }
     else {

@@ -3,12 +3,13 @@
 
 #include "ICommand.h"
 #include <string>
+#include "IModeStrategy.h"
 
 class IGetModeCommand : public ICommand {
 public:
-    virtual ~IGetModeCommand() = 0;
+    virtual ~IGetModeCommand() {};
 
-    std::string* modeNameResult; // Mod�l 8'deki std::string de�i�keninin adresi
+    std::string modeName;
 
     virtual void execute() = 0;
 };

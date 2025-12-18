@@ -35,7 +35,7 @@ void ChangeModeAction::execute() {
         menuDisplayer.showText("Invalid mode selected.");
     }
 
-    changeModeCommand->newMode = selectedMode;
+    changeModeCommand->mode = selectedMode;
     changeModeCommand->execute();
     
     menuDisplayer.showFormattedText("Mode changed to " + selectedMode->getModeName() + ".\n");

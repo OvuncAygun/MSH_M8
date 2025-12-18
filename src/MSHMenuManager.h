@@ -41,5 +41,5 @@ private:
 
     bool isRunning = true;
 
-    MSHMenuManager() = default;
+    MSHMenuManager() {};
 };

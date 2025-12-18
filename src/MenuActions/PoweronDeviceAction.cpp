@@ -30,48 +30,48 @@ void PowerOnDeviceAction::execute() {
         getDeviceByTypeCommand->execute();
         devices.insert(
             devices.end(), 
-            getDeviceByTypeCommand->listResult->begin(), 
-            getDeviceByTypeCommand->listResult->end()
+            getDeviceByTypeCommand->devices.begin(), 
+            getDeviceByTypeCommand->devices.end()
         );
     } else if(deviceTypeInput == "D") {
         getDeviceByTypeCommand->type = DeviceType::TYPE_GasDetector;
         getDeviceByTypeCommand->execute();
         devices.insert(
             devices.end(), 
-            getDeviceByTypeCommand->listResult->begin(), 
-            getDeviceByTypeCommand->listResult->end()
+            getDeviceByTypeCommand->devices.begin(), 
+            getDeviceByTypeCommand->devices.end()
         );
 
         getDeviceByTypeCommand->type = DeviceType::TYPE_SmokeDetector;
         getDeviceByTypeCommand->execute();
         devices.insert(
             devices.end(), 
-            getDeviceByTypeCommand->listResult->begin(), 
-            getDeviceByTypeCommand->listResult->end()
+            getDeviceByTypeCommand->devices.begin(), 
+            getDeviceByTypeCommand->devices.end()
         );
     } else if(deviceTypeInput == "C") {
         getDeviceByTypeCommand->type = DeviceType::TYPE_Camera;
         getDeviceByTypeCommand->execute();
         devices.insert(
             devices.end(), 
-            getDeviceByTypeCommand->listResult->begin(), 
-            getDeviceByTypeCommand->listResult->end()
+            getDeviceByTypeCommand->devices.begin(), 
+            getDeviceByTypeCommand->devices.end()
         );
     } else if(deviceTypeInput == "T") {
         getDeviceByTypeCommand->type = DeviceType::TYPE_TV;
         getDeviceByTypeCommand->execute();
         devices.insert(
             devices.end(), 
-            getDeviceByTypeCommand->listResult->begin(), 
-            getDeviceByTypeCommand->listResult->end()
+            getDeviceByTypeCommand->devices.begin(), 
+            getDeviceByTypeCommand->devices.end()
         );
     } else if(deviceTypeInput == "S") {
         getDeviceByTypeCommand->type = DeviceType::TYPE_Music;
         getDeviceByTypeCommand->execute();
         devices.insert(
             devices.end(), 
-            getDeviceByTypeCommand->listResult->begin(), 
-            getDeviceByTypeCommand->listResult->end()
+            getDeviceByTypeCommand->devices.begin(), 
+            getDeviceByTypeCommand->devices.end()
         );
     } else {
         menuDisplayer.showText("Invalid device type selected.");
@@ -91,8 +91,19 @@ void PowerOnDeviceAction::execute() {
     int index;
     std::stringstream(deviceId) >> index;
 
-    poweronDeviceCommand->index = index;
-    poweronDeviceCommand->execute();
+    poweronDeviceCommand->device = NULL;
+    for (IDevice* device : devices) {
+        if (device->getIndex() == index) {
+            poweronDeviceCommand->device = device;
+            break;
+        }
+    }
+    if (poweronDeviceCommand->device != NULL) {
+        poweronDeviceCommand->execute();
+        menuDisplayer.showFormattedText("Device " + deviceId + " on.\n");
+    } else {
+        menuDisplayer.showFormattedText("Invalid Device ID.\n");
+    }
 
     menuDisplayer.showFormattedText("Device " + deviceId + " on.\n");
 }

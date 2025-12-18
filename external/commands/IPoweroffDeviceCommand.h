@@ -3,13 +3,13 @@
 
 #include "ICommand.h"
 #include "DeviceType.h"
+#include "IDevice.h"
 
 class IPoweroffDeviceCommand : public ICommand {
 public:
-    virtual ~IPoweroffDeviceCommand() = 0;
+    virtual ~IPoweroffDeviceCommand() {};
     
-    DeviceType deviceType;
-    int index;
+    IDevice* device;
 
     virtual void execute() = 0;
 };

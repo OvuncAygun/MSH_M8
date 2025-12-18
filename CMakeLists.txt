@@ -6,13 +6,21 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_library(MSH_M8)
 
+add_library(EXTERNAL INTERFACE)
+
+target_include_directories(EXTERNAL
+    INTERFACE
+        ${CMAKE_CURRENT_SOURCE_DIR}/external
+        ${CMAKE_CURRENT_SOURCE_DIR}/external/commands
+)
+
+target_link_libraries(MSH_M8 PUBLIC EXTERNAL)
+
 target_include_directories(MSH_M8
     PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/include
     
     PRIVATE
-        ${CMAKE_CURRENT_SOURCE_DIR}/external
-        ${CMAKE_CURRENT_SOURCE_DIR}/external/commands
         src
         src/Helpers
         src/MenuActions

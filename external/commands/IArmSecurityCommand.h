@@ -5,7 +5,7 @@
 
 class IArmSecurityCommand : public ICommand {
 public:
-    virtual ~IArmSecurityCommand() = 0;
+    virtual ~IArmSecurityCommand() {};
 
     virtual void execute() = 0;
 };
