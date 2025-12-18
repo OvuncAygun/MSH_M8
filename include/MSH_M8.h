@@ -1,7 +1,7 @@
 #pragma once
 
 #include "ICommand.h"
-#include "MSHMenuManager.h"
+#include "IMSHMenuManager.h"
 
 #include <vector>
 #include <map>
@@ -27,7 +27,7 @@ public:
     void applyMSHMMenuManagerStates();
 
 private:
-    MSHMenuManager* mshMenuManager;
+    IMSHMenuManager* mshMenuManager;
     std::map<std::string, ICommand*> commandMap;
     std::map<std::string, MenuAction*> actionMap;
     std::map<std::string, IModeStrategy*> modeMap;

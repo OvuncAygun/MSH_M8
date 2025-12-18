@@ -9,6 +9,7 @@
 #include "ManualAction.h"
 #include "AboutAction.h"
 #include "ShutdownAction.h"
+#include "MSHMenuManager.h"
 
 
 MSH_M8::MSH_M8() = default;
