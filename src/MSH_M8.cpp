@@ -77,3 +77,7 @@ void MSH_M8::initializeStates(std::vector<IState*> states) {
 void MSH_M8::applyMSHMMenuManagerStates() {
     mshMenuManager->setStateMap(stateMap);
 }
+
+IMSHMenuManager* MSH_M8::getMenuManager() {
+    return mshMenuManager;
+}

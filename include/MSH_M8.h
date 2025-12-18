@@ -26,6 +26,8 @@ public:
     void initializeStates(std::vector<IState*> states);
     void applyMSHMMenuManagerStates();
 
+    IMSHMenuManager* getMenuManager();
+
 private:
     IMSHMenuManager* mshMenuManager;
     std::map<std::string, ICommand*> commandMap;
