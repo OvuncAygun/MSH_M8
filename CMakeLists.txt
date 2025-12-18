@@ -9,10 +9,10 @@ add_library(MSH_M8)
 target_include_directories(MSH_M8
     PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/include
-        ${CMAKE_CURRENT_SOURCE_DIR}/external
-        ${CMAKE_CURRENT_SOURCE_DIR}/external/commands
     
     PRIVATE
+        ${CMAKE_CURRENT_SOURCE_DIR}/external
+        ${CMAKE_CURRENT_SOURCE_DIR}/external/commands
         src
         src/Helpers
         src/MenuActions
