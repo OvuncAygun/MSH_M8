@@ -16,9 +16,9 @@ void ChangeStateAction::execute() {
     InputHandler inputHandler;
     MSHMenuManager* mshMenuManager = MSHMenuManager::getInstance();
     IChangeStateCommand* changeStateCommand = 
-        static_cast<IChangeStateCommand*>(mshMenuManager->getCommandMap()["changeState"]);
+        dynamic_cast<IChangeStateCommand*>(mshMenuManager->getCommandMap()["changeState"]);
     IPreviousStateCommand* previousStateCommand = 
-        static_cast<IPreviousStateCommand*>(mshMenuManager->getCommandMap()["previousState"]);
+        dynamic_cast<IPreviousStateCommand*>(mshMenuManager->getCommandMap()["previousState"]);
 
     menuDisplayer.showFormattedText("Choose a state to change to\n");
     menuDisplayer.showFormattedText("(N)ormal, (H)igh Performance, (L)ow Power, (S)leep, (P)revious one:\n");

@@ -15,9 +15,9 @@ void PowerOnDeviceAction::execute() {
     InputHandler inputHandler;
     MSHMenuManager* mshMenuManager = MSHMenuManager::getInstance();
     IPoweronDeviceCommand* poweronDeviceCommand = 
-        static_cast<IPoweronDeviceCommand*>(mshMenuManager->getCommandMap()["poweronDevice"]);
+        dynamic_cast<IPoweronDeviceCommand*>(mshMenuManager->getCommandMap()["poweronDevice"]);
     IGetDeviceByTypeCommand* getDeviceByTypeCommand = 
-        static_cast<IGetDeviceByTypeCommand*>(mshMenuManager->getCommandMap()["getDeviceByType"]);
+        dynamic_cast<IGetDeviceByTypeCommand*>(mshMenuManager->getCommandMap()["getDeviceByType"]);
 
     menuDisplayer.showFormattedText("Choose a device to power on\n");
     menuDisplayer.showFormattedText("(L)ight, Smoke & Gas (D)etectors, (C)amera, (T)V, (S)ound System:\n");

@@ -14,7 +14,7 @@ void AddDeviceAction::execute() {
     InputHandler inputHandler;
     MSHMenuManager* mshMenuManager = MSHMenuManager::getInstance();
     IAddDeviceCommand* addDeviceCommand = 
-        static_cast<IAddDeviceCommand*>(mshMenuManager->getCommandMap()["addDevice"]);
+        dynamic_cast<IAddDeviceCommand*>(mshMenuManager->getCommandMap()["addDevice"]);
 
     menuDisplayer.showFormattedText("Choose a device to add\n");
     menuDisplayer.showFormattedText("(L)ight, Smoke & Gas (D)etectors, (C)amera, (T)V:\n");

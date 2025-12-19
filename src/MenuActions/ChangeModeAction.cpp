@@ -15,7 +15,7 @@ void ChangeModeAction::execute() {
     InputHandler inputHandler;
     MSHMenuManager* mshMenuManager = MSHMenuManager::getInstance();
     IChangeModeCommand* changeModeCommand = 
-        static_cast<IChangeModeCommand*>(mshMenuManager->getCommandMap()["changeMode"]);
+        dynamic_cast<IChangeModeCommand*>(mshMenuManager->getCommandMap()["changeMode"]);
 
     menuDisplayer.showFormattedText("Choose a mode to change to\n");
     menuDisplayer.showFormattedText("(N)ormal, (E)vening, (P)arty, (C)inema:\n");

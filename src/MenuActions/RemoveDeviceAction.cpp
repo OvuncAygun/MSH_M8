@@ -15,9 +15,9 @@ void RemoveDeviceAction::execute() {
     InputHandler inputHandler;
     MSHMenuManager* mshMenuManager = MSHMenuManager::getInstance();
     IRemoveDeviceCommand* removeDeviceCommand = 
-        static_cast<IRemoveDeviceCommand*>(mshMenuManager->getCommandMap()["removeDevice"]);
+        dynamic_cast<IRemoveDeviceCommand*>(mshMenuManager->getCommandMap()["removeDevice"]);
     IGetDeviceByTypeCommand* getDeviceByTypeCommand = 
-        static_cast<IGetDeviceByTypeCommand*>(mshMenuManager->getCommandMap()["getDeviceByType"]);
+        dynamic_cast<IGetDeviceByTypeCommand*>(mshMenuManager->getCommandMap()["getDeviceByType"]);
 
     menuDisplayer.showFormattedText("Choose a device to remove\n");
     menuDisplayer.showFormattedText("(L)ight, Smoke & Gas (D)etectors, (C)amera, (T)V:\n");

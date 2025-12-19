@@ -18,12 +18,12 @@ void GetHomeStatusAction::execute() {
     InputHandler inputHandler;
     MSHMenuManager* mshMenuManager = MSHMenuManager::getInstance();
     IGetModeCommand* getModeCommand = 
-        static_cast<IGetModeCommand*>(mshMenuManager->getCommandMap()["getMode"]);
+        dynamic_cast<IGetModeCommand*>(mshMenuManager->getCommandMap()["getMode"]);
     IGetStateCommand* getStateCommand = 
-        static_cast<IGetStateCommand*>(mshMenuManager->getCommandMap()["getState"]);
+        dynamic_cast<IGetStateCommand*>(mshMenuManager->getCommandMap()["getState"]);
     IGetDeviceByTypeCommand* getDeviceByTypeCommand = 
-        static_cast<IGetDeviceByTypeCommand*>(mshMenuManager->getCommandMap()["getDeviceByType"]);
-
+        dynamic_cast<IGetDeviceByTypeCommand*>(mshMenuManager->getCommandMap()["getDeviceByType"]);
+    
     menuDisplayer.showFormattedText("Mode: ");
     getModeCommand->execute();
     std::string modeName =getModeCommand->modeName;

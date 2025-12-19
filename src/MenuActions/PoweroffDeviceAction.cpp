@@ -15,9 +15,9 @@ void PoweroffDeviceAction::execute() {
     InputHandler inputHandler;
     MSHMenuManager* mshMenuManager = MSHMenuManager::getInstance();
     IPoweroffDeviceCommand* poweroffDeviceCommand = 
-        static_cast<IPoweroffDeviceCommand*>(mshMenuManager->getCommandMap()["poweroffDevice"]);
+        dynamic_cast<IPoweroffDeviceCommand*>(mshMenuManager->getCommandMap()["poweroffDevice"]);
     IGetDeviceByTypeCommand* getDeviceByTypeCommand = 
-        static_cast<IGetDeviceByTypeCommand*>(mshMenuManager->getCommandMap()["getDeviceByType"]);
+        dynamic_cast<IGetDeviceByTypeCommand*>(mshMenuManager->getCommandMap()["getDeviceByType"]);
 
     menuDisplayer.showFormattedText("Choose a device to power off\n");
     menuDisplayer.showFormattedText("(L)ight, Smoke & Gas (D)etectors, (C)amera, (T)V, (S)ound System:\n");
