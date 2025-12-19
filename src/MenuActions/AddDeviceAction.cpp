@@ -38,7 +38,8 @@ void AddDeviceAction::execute() {
 
     menuDisplayer.showFormattedText("Enter Quantity: ");
     std::stringstream ss;
-    ss << inputHandler.handleConfigurationInput();
+    std::string quantityInput = inputHandler.handleConfigurationInput();
+    ss << quantityInput;
     int quantity;
     ss >> quantity;
 
