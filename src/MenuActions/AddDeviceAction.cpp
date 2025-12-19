@@ -5,6 +5,8 @@
 #include "DeviceCreationType.h"
 #include "IAddDeviceCommand.h"
 
+#include <sstream>
+
 AddDeviceAction::AddDeviceAction() = default;
 AddDeviceAction::~AddDeviceAction() = default;
 
