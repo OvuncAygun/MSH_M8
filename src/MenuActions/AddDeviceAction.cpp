@@ -35,7 +35,10 @@ void AddDeviceAction::execute() {
     }
 
     menuDisplayer.showFormattedText("Enter Quantity: ");
-    int quantity = stoi(inputHandler.handleConfigurationInput());
+    std::stringstream ss;
+    ss << inputHandler.handleConfigurationInput();
+    int quantity;
+    ss >> quantity;
 
     for(int i = 1; i <= quantity; ++i) {
         menuDisplayer.showFormattedText("Enter Device Name: ");
