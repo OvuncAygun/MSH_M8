@@ -25,29 +25,15 @@ void ChangeStateAction::execute() {
     std::string stateInput = inputHandler.handleSelectionInput();
 
     IState* selectedState;
-    if(stateInput == "N") {
-        selectedState = mshMenuManager->getStateMap()["NormalState"];
-    } else if(stateInput == "H") {
-        selectedState = mshMenuManager->getStateMap()["HighPerformanceState"];
-    } else if(stateInput == "L") {
-        selectedState = mshMenuManager->getStateMap()["LowPowerState"];
-    } else if(stateInput == "S") {
-        selectedState = mshMenuManager->getStateMap()["SleepState"];
-    } else if(stateInput == "P") {
-        selectedState = mshMenuManager->getStateMap()["PreviousState"];
-    } else {
-        menuDisplayer.showText("Invalid state selected.");
-    }
-
     if (stateInput != "P") {
         if(stateInput == "N") {
-            selectedState = mshMenuManager->getStateMap()["NormalState"];
+            selectedState = mshMenuManager->getStateMap()["normal"];
         } else if(stateInput == "H") {
-            selectedState = mshMenuManager->getStateMap()["HighPerformanceState"];
+            selectedState = mshMenuManager->getStateMap()["highPerformance"];
         } else if(stateInput == "L") {
-            selectedState = mshMenuManager->getStateMap()["LowPowerState"];
+            selectedState = mshMenuManager->getStateMap()["lowPower"];
         } else if(stateInput == "S") {
-            selectedState = mshMenuManager->getStateMap()["SleepState"];
+            selectedState = mshMenuManager->getStateMap()["sleep"];
         } else {
             menuDisplayer.showText("Invalid state selected.");
         }

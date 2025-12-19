@@ -80,4 +80,4 @@ void MSH_M8::applyMSHMMenuManagerStates() {
 
 IMSHMenuManager* MSH_M8::getMenuManager() {
     return mshMenuManager;
-}
+}   

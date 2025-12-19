@@ -24,13 +24,13 @@ void ChangeModeAction::execute() {
     IModeStrategy* selectedMode;
 
     if(modeInput == "N") {
-        selectedMode = mshMenuManager->getModeMap()["NormalMode"];
+        selectedMode = mshMenuManager->getModeMap()["normal"];
     } else if(modeInput == "E") {
-        selectedMode = mshMenuManager->getModeMap()["EveningMode"];
+        selectedMode = mshMenuManager->getModeMap()["evening"];
     } else if(modeInput == "P") {
-        selectedMode = mshMenuManager->getModeMap()["PartyMode"];
+        selectedMode = mshMenuManager->getModeMap()["party"];
     } else if(modeInput == "C") {
-        selectedMode = mshMenuManager->getModeMap()["CinemaMode"];
+        selectedMode = mshMenuManager->getModeMap()["cinema"];
     } else {
         menuDisplayer.showText("Invalid mode selected.");
     }
