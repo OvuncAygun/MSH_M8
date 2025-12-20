@@ -61,7 +61,7 @@ void AddDeviceAction::execute() {
             std::string copyConfigInput = inputHandler.handleSelectionInput();
             if (copyConfigInput == "YES") {
                 addDeviceCommand->deviceCreationType = static_cast<DeviceCreationType>(deviceType);
-                addDeviceCommand->count = quantity - i;
+                addDeviceCommand->count = quantity - i + 1;
                 addDeviceCommand->name = deviceName;
                 addDeviceCommand->config = deviceConfig;
                 addDeviceCommand->execute();
