@@ -4,6 +4,7 @@
 #include "MSHMenuManager.h"
 #include "IChangeStateCommand.h"
 #include "IPreviousStateCommand.h"
+#include "IGetStateCommand.h"
 #include "IState.h"
 
 #include <sstream>
@@ -19,6 +20,8 @@ void ChangeStateAction::execute() {
         dynamic_cast<IChangeStateCommand*>(mshMenuManager->getCommandMap()["changeState"]);
     IPreviousStateCommand* previousStateCommand = 
         dynamic_cast<IPreviousStateCommand*>(mshMenuManager->getCommandMap()["previousState"]);
+    IChangeStateCommand* changeStateCommand = 
+        dynamic_cast<IChangeStateCommand*>(mshMenuManager->getCommandMap()["changeState"]);
 
     menuDisplayer.showFormattedText("Choose a state to change to\n");
     menuDisplayer.showFormattedText("(N)ormal, (H)igh Performance, (L)ow Power, (S)leep, (P)revious one:\n");
@@ -43,6 +46,7 @@ void ChangeStateAction::execute() {
     }
     else {
         previousStateCommand->execute();
+        selectedState = getStateCommand->state;
     }
     
     menuDisplayer.showFormattedText("State changed to " + selectedState->getName() + ".\n");
