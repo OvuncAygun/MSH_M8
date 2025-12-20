@@ -20,8 +20,8 @@ void ChangeStateAction::execute() {
         dynamic_cast<IChangeStateCommand*>(mshMenuManager->getCommandMap()["changeState"]);
     IPreviousStateCommand* previousStateCommand = 
         dynamic_cast<IPreviousStateCommand*>(mshMenuManager->getCommandMap()["previousState"]);
-    IChangeStateCommand* changeStateCommand = 
-        dynamic_cast<IChangeStateCommand*>(mshMenuManager->getCommandMap()["changeState"]);
+    IGetStateCommand* getStateCommand = 
+        dynamic_cast<IGetStateCommand*>(mshMenuManager->getCommandMap()["getState"]);
 
     menuDisplayer.showFormattedText("Choose a state to change to\n");
     menuDisplayer.showFormattedText("(N)ormal, (H)igh Performance, (L)ow Power, (S)leep, (P)revious one:\n");
