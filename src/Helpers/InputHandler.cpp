@@ -8,6 +8,7 @@ InputHandler::~InputHandler() = default;
 std::string InputHandler::handleSelectionInput() {
     std::string input;
     std::cin >> input;
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     return input;
 }
 
