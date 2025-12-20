@@ -46,6 +46,7 @@ void ChangeStateAction::execute() {
     }
     else {
         previousStateCommand->execute();
+        getStateCommand->execute();
         selectedState = getStateCommand->state;
     }
     
