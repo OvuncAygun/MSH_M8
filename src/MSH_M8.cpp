@@ -82,7 +82,7 @@ void MSH_M8::applyMSHMMenuManagerStates() {
 }
 
 void MSH_M8::setSecurityManager(ISecurityManager* securityManager) {
-    mshMenuManager->setSecurityManager(securityManager);
+    static_cast<MSHMenuManager*>(mshMenuManager)->setSecurityManager(securityManager);
 }
 
 

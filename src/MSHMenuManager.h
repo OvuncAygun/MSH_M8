@@ -5,6 +5,7 @@
 #include "ICommand.h"
 #include "IModeStrategy.h"
 #include "IState.h"
+#include "ISecurityManager.h"
 
 #include <map>
 
