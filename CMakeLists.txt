@@ -12,12 +12,12 @@ target_link_libraries(MSH_M8 PUBLIC MSH_M1 MSH_M2 MSH_M3 MSH_M4 MSH_M6 MSH_M7)
 target_include_directories(MSH_M8
     PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/include
-        ${CMAKE_CURRENT_SOURCE_DIR}/include/simulations
     
     PRIVATE
         src
         src/Helpers
         src/MenuActions
+        src/Simulations
 )
 
 target_sources(MSH_M8
