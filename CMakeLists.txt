@@ -36,6 +36,9 @@ target_sources(MSH_M8
         src/MenuActions/ManualAction.cpp
         src/MenuActions/AboutAction.cpp
         src/MenuActions/ShutdownAction.cpp
+        src/simulations/Simulation1.cpp
+        src/simulations/Simulation2.cpp
+        src/simulations/Simulation3.cpp
     
     PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/include/MSH_M8.h
