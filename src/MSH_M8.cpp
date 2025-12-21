@@ -2,7 +2,7 @@
 #include "GetHomeStatusAction.h"
 #include "AddDeviceAction.h"
 #include "RemoveDeviceAction.h"
-#include "PowerOnDeviceAction.h"
+#include "PoweronDeviceAction.h"
 #include "PoweroffDeviceAction.h"
 #include "ChangeModeAction.h"
 #include "ChangeStateAction.h"
