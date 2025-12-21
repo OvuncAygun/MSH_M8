@@ -1,6 +1,7 @@
 #include "InputHandler.h"
 
 #include <iostream>
+#include <limits>
 
 InputHandler::InputHandler() = default;
 InputHandler::~InputHandler() = default;
