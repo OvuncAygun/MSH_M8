@@ -9,6 +9,7 @@ void Simulation2::execute() {
     MSHMenuManager* mshMenuManager = MSHMenuManager::getInstance();
     IArmSecurityCommand* armSecurityCommand = 
         dynamic_cast<IArmSecurityCommand*>(mshMenuManager->getCommandMap()["armSecurity"]);
+    armSecurityCommand->execute();
     ISecurityManager* securityManager = mshMenuManager->getSecurityManager();
     securityManager->onMotionDetected(15000);
 }
