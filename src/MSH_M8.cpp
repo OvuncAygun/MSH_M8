@@ -26,7 +26,7 @@ void MSH_M8::initializeActions() {
     actionMap["1"] = new GetHomeStatusAction();
     actionMap["2"] = new AddDeviceAction();
     actionMap["3"] = new RemoveDeviceAction();
-    actionMap["4"] = new PowerOnDeviceAction();
+    actionMap["4"] = new PoweronDeviceAction();
     actionMap["5"] = new PoweroffDeviceAction();
     actionMap["6"] = new ChangeModeAction();
     actionMap["7"] = new ChangeStateAction();

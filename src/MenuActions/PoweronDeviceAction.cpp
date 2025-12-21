@@ -1,4 +1,4 @@
-#include "PowerOnDeviceAction.h"
+#include "PoweronDeviceAction.h"
 #include "MenuDisplayer.h"
 #include "InputHandler.h"
 #include "MSHMenuManager.h"
@@ -7,10 +7,10 @@
 
 #include <sstream>
 
-PowerOnDeviceAction::PowerOnDeviceAction() = default;
-PowerOnDeviceAction::~PowerOnDeviceAction() = default;
+PoweronDeviceAction::PoweronDeviceAction() = default;
+PoweronDeviceAction::~PoweronDeviceAction() = default;
 
-void PowerOnDeviceAction::execute() {
+void PoweronDeviceAction::execute() {
     MenuDisplayer menuDisplayer;
     InputHandler inputHandler;
     MSHMenuManager* mshMenuManager = MSHMenuManager::getInstance();

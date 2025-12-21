@@ -2,10 +2,10 @@
 
 #include "MenuAction.h"
 
-class PowerOnDeviceAction : public MenuAction {
+class PoweronDeviceAction : public MenuAction {
 public:
-    PowerOnDeviceAction();
-    ~PowerOnDeviceAction();
+    PoweronDeviceAction();
+    ~PoweronDeviceAction();
 
     void execute() override;
 };
