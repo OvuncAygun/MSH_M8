@@ -20,5 +20,6 @@ std::string InputHandler::handleConfigurationInput() {
 }
 
 void InputHandler::waitForInput() {
+    std::cout << "Press Enter to continue..." << std::endl;
     std::cin.get();
 }

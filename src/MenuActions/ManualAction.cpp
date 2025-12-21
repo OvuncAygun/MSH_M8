@@ -11,6 +11,7 @@ void ManualAction::execute() {
     InputHandler inputHandler;
     MSHMenuManager* mshMenuManager = MSHMenuManager::getInstance();
     menuDisplayer.showText(
-        "Manual Text...\n"
+        "Use keyboard to navigate between operations\n"
+        "Case sensitive inputs are required.\n"
     );
 }
