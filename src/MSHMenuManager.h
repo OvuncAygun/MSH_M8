@@ -29,6 +29,9 @@ public:
     std::map<std::string, IState*> getStateMap();
     void setStateMap(std::map<std::string, IState*> stateMap);
 
+    ISecurityManager* getSecurityManager();
+    void setSecurityManager(ISecurityManager* securityManager);
+
     bool getIsRunning() const;
     void setIsRunning(bool isRunning);
 
@@ -38,6 +41,7 @@ private:
     std::map<std::string, ICommand*> commandMap;
     std::map<std::string, IModeStrategy*> modeMap;
     std::map<std::string, IState*> stateMap;
+    ISecurityManager* securityManager;
 
     bool isRunning = true;
 

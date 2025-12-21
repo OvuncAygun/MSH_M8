@@ -2,6 +2,7 @@
 
 #include "ICommand.h"
 #include "IMSHMenuManager.h"
+#include "ISecurityManager.h"
 
 #include <vector>
 #include <map>
@@ -25,6 +26,8 @@ public:
 
     void initializeStates(std::vector<IState*> states);
     void applyMSHMMenuManagerStates();
+
+    void setSecurityManager(ISecurityManager* securityManager);
 
     IMSHMenuManager* getMenuManager();
 

@@ -78,6 +78,12 @@ void MSH_M8::applyMSHMMenuManagerStates() {
     mshMenuManager->setStateMap(stateMap);
 }
 
+void MSH_M8::setSecurityManager(ISecurityManager* securityManager) {
+    mshMenuManager->setSecurityManager(securityManager);
+}
+
+
+
 IMSHMenuManager* MSH_M8::getMenuManager() {
     return mshMenuManager;
 }   

@@ -55,6 +55,13 @@ void MSHMenuManager::setStateMap(std::map<std::string, IState*> stateMap) {
     this->stateMap = stateMap;
 }
 
+ISecurityManager* MSHMenuManager::getSecurityManager() {
+    return securityManager;
+}
+void MSHMenuManager::setSecurityManager(ISecurityManager* securityManager) {
+    this->securityManager = securityManager;
+}
+
 bool MSHMenuManager::getIsRunning() const {
     return isRunning;
 }

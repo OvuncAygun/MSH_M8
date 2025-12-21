@@ -15,6 +15,9 @@ void MenuDisplayer::showMainMenu() {
     std::cout << "[8] Manual" << std::endl;
     std::cout << "[9] About" << std::endl;
     std::cout << "[10] Shutdown" << std::endl;
+    std::cout << "[11] Simulated Event 1" << std::endl;
+    std::cout << "[12] Simulated Event 2" << std::endl;
+    std::cout << "[13] Simulated Event 3" << std::endl;
 }
 
 void MenuDisplayer::showText(std::string text) {
