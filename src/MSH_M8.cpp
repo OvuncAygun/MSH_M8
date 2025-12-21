@@ -30,6 +30,9 @@ void MSH_M8::initializeActions() {
     actionMap["8"] = new ManualAction();
     actionMap["9"] = new AboutAction();
     actionMap["10"] = new ShutdownAction();
+    actionMap["11"] = new Simulation1();
+    actionMap["12"] = new Simulation2();
+    actionMap["13"] = new Simulation3();
 }
 
 void MSH_M8::applyMSHMMenuManagerActions() {
