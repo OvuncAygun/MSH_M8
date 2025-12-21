@@ -10,6 +10,9 @@
 #include "AboutAction.h"
 #include "ShutdownAction.h"
 #include "MSHMenuManager.h"
+#include "Simulation1.h"
+#include "Simulation2.h"
+#include "Simulation3.h"
 
 
 MSH_M8::MSH_M8() = default;
